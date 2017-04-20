@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Introduction to Pandas | Girl Develop It</title>
+
+    <meta name="description" content="This is the official Girl Develop It Intro to Pandas workshop. The workshop is meant to be taught in one two-hour session. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/gdiaa.css" id="theme">
+  <link rel="stylesheet" href="lib/css/light.css">
+  <link rel="stylesheet" href="css/print/pdf.css" media="print">
+
+  <script src="lib/js/head.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <!-- Opening slide -->
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Pandas Workshop</span></h3>
+          </div>
+        </section>
+
+
+        <!-- Welcome-->
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p class = "blue">Tell us about yourself.</p>
+          <ul>
+            <li>Who are you?</li>
+            <li>What made you interested in this course?</li>
+            <li>What is your favorite or dream vacation destination?</li>
+
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>What we will cover</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class ="fragment">What is Pandas?</li>
+            <li class ="fragment">Why Pandas?</li>
+            <li class ="fragment">Uploading and Saving Data</li>
+            <li class ="fragment">Summarizing and Organizing Data</li>
+            <li class ="fragment">Manipulating Data</li>
+          </ul>
+        </section>
+
+       <section>
+        <h3>What is Pandas?</h3>
+        <ul class="list--tall copy--small box--small">
+          <li class ="fragment">pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with relational data both easy and intuitive. It is an extremely  useful tool for doing practical, real world data analysis in Python.</li>
+        </ul>
+      </section>
+
+     <section>
+        <h3>Why Pandas?</h3>
+        <ul class="list--tall copy--small box--small">
+          <li class ="fragment">Etremely fast, even with large datasets</li>
+          <li class ="fragment">Quick, intuitive commands</li>
+          <li class ="fragment">View your data without crashing computer</li>
+          <li class ="fragment">Great for developers, staticisions, and more</li>
+          <li class="fragment">Used by many companies</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Who is using pandas?</h3>
+        <ul class="list--tall copy--small box--small">
+          <li>Facebook</li>
+          <li>AppNexus</li>
+          <li>SpringServe</li>
+          <li>(many others)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Setup</h3>
+        <p class="box--small">Open up your terminal and install all of the following
+        packages that are not already on your computer:</p>
+        <p class="box--small">pip: for mac users - run the command below</p>
+        <p class="box--small">For windows users - copy the text from here, save it to a
+        python file, then run <code>python (filename)</code></p>
+        <p class="box--small">ipython and pandas: run the commands below<p>
+        <div class='box--small'><pre><code contenteditable class="python" style="min-height: 50px;">
+sudo easy_install pip
+pip install ipython
+pip install pandas
+        </code></pre></div>
+        <p class="box--small">Running sudo the first time will ask you for your computer
+        password</p>
+        <p class="box--small">If the pip commands say permission denied, run with sudo pip instead</p>
+      </section>
+
+      <section>
+        <h3>Our Sample Data</h3>
+        <p class='box--small'>Our data is stored in the folder
+        gdi-intro-pandas/example_data/</p>
+        <p class='box--small'>Once in that folder, open up the file purchases.csv</p>
+      </section>
+
+      <section>
+        <h3>Ipython and tab completion</h3>
+        <p class='box--small'>In your terminal run ipython. Let's import pandas and try
+        out tab completion</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [1]: import pandas
+
+In [2]: pandas.read_
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Importing our CSV</h3>
+        <p class='box--small'>Now let's import our data with read_csv</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [3]: purchases = pandas.read_csv('~/gdi-intro-pandas/example_data/purchases.csv')
+        </code></pre></div>
+        <p class='box--small'>You now have a pandas dataframe called purchases</p>
+      </section>
+
+      <section>
+      <h3>Summarizing Your Data</h3>
+        <p class='box--small'>A major advantage of pandas is being able to see your data
+        without ever opening a file</p>
+        <p class='box--small'>Here are some useful commands for summarizing your
+        dataframe</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [4]: purchases.head()
+
+In [5]: purchases.tail(2)
+
+In [6]: purchases.shape
+
+In [7]: purchases.columns
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Let's Develop It!</h3>
+        <p class='box--small'>Use the read_csv command to import our example data
+        members.csv</p>
+        <p class='box--small'>Print out the columns of your members dataframe</p>
+        <p class='box--small'>Print out the top 10 rows of your dataframe</p>
+        <p class='box--small'>Find out how many rows are in your dataframe</p>
+      </section>
+
+      <section>
+      <h3>Adding and Removing Columns</h3>
+        <p class='box--small'>You can quickly delete columns and add new columns to your dataframe</p>
+        <p class='box--small'>Deleting columns is done with the command del</p>
+        <p class='box--small'>You can also create a new column by simply adding two existing columns together</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [8]: purchases['total_price'] = purchases['price'] + purchases['tax']
+
+In [9]: purchases.head()
+
+In [10]: del purchases['tax']
+
+In [11]: purchases.head()
+        </code></pre></div>
+        <p class='box--small'>Notice how referencing a dataframe column looks a lot like
+        referencing a dictionary key</p>
+      </section>
+
+      <section>
+      <h3>Fill in empty cells</h3>
+        <p class='box--small'>If your data came with empty cells, pandas will fill it in
+        with NaN.</p>
+        <p class='box--small'>This can cause an error if you are trying to add two integer
+        columns together.</p>
+        <p class='box--small'>To solve this, we can use the fillna() command to replace
+        NaN with whatever we choose.</p>
+        <p class='box--small'>Notice that I refer to the first_name column as
+        purchases.first_name. That is also accepted syntax in pandas.</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [12]: purchases.first_name.fillna(' ')
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Sorting Your Data</h3>
+        <p class='box--small'>You can sort your data by any row</p>
+        <p class='box--small'>Sorting will default to ascending=True, so if you want to
+        sort descending, you have to specify in your parameters ascending=False</p>
+        <p class='box--small'>Let's take a quick look at the pandas documentation for more
+        information</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [13]: purchases.sort_values(by='date', index=False)
+
+In [14]: purchases = purchases.sort_values(by=['date', 'price'], ascending=False,
+index=False)
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Saving Your Data</h3>
+        <p class='box--small'>Now that we've made some changes to our dataframe, let's
+        save it to a new csv</p>
+        <p class='box--small'>Similarly to how we imported the data, we have the command
+        to_csv to export it. 
+        <p class='box--small'>Check out tab complete after <code>to_</code> to see your
+        other options!</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [15]: purchases.to_csv('~/gdi-intro-pandas/example_data/export_purchases.csv')
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Let's Develop It!</h3>
+        <p class='box--small'>Take your dataframe members and do the following:</p>
+        <p class='box--small'>Create a new column, which will read as First Name Last
+        Name</p>
+        <p class='box--small'>Delete the column for phone number</p>
+        <p class='box--small'>Fill in the NaN rows of the total spent column with 0
+        <p class='box--small'>Sort data by birthday</p>
+        <p class='box--small'>Save your dataframe as a csv called members_by_birthday.csv"
+        in the same folder</p>
+      </section>
+
+      <section>
+      <h3>Changing a Row's Data Type</h3>
+        <p class='box--small'>When importing data, you may see your totals column imported
+        as a string, but you need it to be a float.</p>
+        <p class='box--small'>pandas as a function astype() that lets you change the data
+        type of your column.</p>
+        <p class='box--small'>Let's try turning our number of visits into a string, and
+        then into a float</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [16]: purchase.visits = purchases.visits.astype(str)
+
+In [17]: purchase.visits = purchases.visits.astype(float)
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Column to Python List</h3>
+      <p class='box--small'>You may come across situations where you want one column as a
+      python list to use for outside analysis.</p>
+      <p class='box--small'>pandas makes it easy with a tolist() function</p>
+      <div class='box--small'><pre><code contenteditable class="python">
+In [18]: ids_list = purchases.member_id.tolist()
+
+In [19]: len(ids_list)
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Dataframe Manipulation: Filtering</h3>
+        <p class='box--small'>pandas filtering can look a little funny, but it is
+        extremely useful</p>
+        <p class='box--small'>Let's look at the following code and break down exactly what
+        is happening</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [20]: large_purchases = purchases[purchases['price'] > 100.0] 
+        </code></pre></div>
+        <p class='box--small'>You want to look from inside out</p>
+        <p class='box--small'>We are looking at the price column</p>
+        <p class='box--small'>We are only looking at rows where the price column is
+        greater than 100 dollars.</p>
+        <p class='box--small'>We are keeping all of purchases where price is greater than
+        100 dollars.</p>
+      </section>
+
+      <section>
+      <h3>Let's Develop It!</h3>
+        <p class='box--small'>Let's create a new dataframe named small_purchases where
+        total_price is less than 50 dollars.</p>
+        <p class='box--small'>Get a list of all the member ids in small_purchases</p>
+      </section>
+
+      <section>
+      <h3>Concatinating DataFrames</h3>
+        <p class='box--small'>To concatinate dataframes means to take two dataframes with the same columns and putting together the rows</p>
+        <p class='box--small'>Let's import the csv purchases-october.csv</p>
+        <p class='box--small'>Since this csv has the columns as purchases, we can concatinate the two dataframes like so:</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [21]: pandas.concat(purchases, purchases-october)
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Merging DataFrames</h3>
+        <p class='box--small'>You can think of merging dataframes a lot like SQL joins</p>
+        <p class='box--small'>You can use a column (or a list of columns) to merge two
+        dataframes together.</p>
+        <p class='box--small'>Let's merge purchases and members on the column
+        member_id</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [22]: merged = purchases.merge(members, how='left', on='member_id')
+        </code></pre></div>
+        <p class='box--small'>The how parameter is comparable to the type of join you
+        would use in SQL.</p>
+        <p class='box--small'>on decides the column or columns (as a list) that you want
+        to merge on</p>
+      </section>
+
+      <section>
+      <h3>Group By</h3>
+        <p class='box--small'>groupby allows you to group by 1 or more columns to get a
+        more top-level view of your data</p>
+        <p class='box--small'>There are a couple of ways to do this, but here is one
+        recommended way.</p>
+        <p class='box--small'>Either way, you will need the as_index=False</p>
+        <div class='box--small'><pre><code contenteditable class="python">
+In [23]: prices_avg_by_date = purchases.groupby('date', as_index=False)[['price', 'total_price']].avg()
+
+In [24]: total_by_member_and_date = purchases.groupby(['date', 'member_id'], as_index=False)['total_price'].sum()
+        </code></pre></div>
+      </section>
+
+      <section>
+      <h3>Let's Develop It!</h3>
+      <p class='box--small'>Import items.csv as a pandas dataframe</p>
+      <p class='box--small'>Merge items with purchases by item_id</p>
+      <p class='box--small'>Group this new dataframe by item type and date, sum the total
+      cost</p>
+      <p class='box--small'>*Challenge* Find out the member name who has spent the most on
+      sale</p>
+      items</p>
+      </section>
+
+      <section>
+      <h3>Survey</h3>
+      <p class='box--small'>Thanks for attending Intro to Pandas!</p>
+      <p class='box--small'>Your input is invaluable for the improvement of this
+      workshop</p>
+      <p class='box--small'>Please take a minute and <a href="http://bit.ly/GDI-NYC">click here</a> to fill out our survey</p> 
+      </section>
+
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>                                                                                                                                                       </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:                                                                                                                             // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,                                                                                                                                                                   progress: true,
+      history: true,                                                                                                                                                                    rollingLinks: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js                                                                                                                                 dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },                                                                                       { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },                                                          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },                                                                      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]                                                                                                                                                                               });
+  </script>                                                                                                                                                                       </body>
+</html>
