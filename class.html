@@ -37,7 +37,7 @@
           </div>
         </section>
 
-
+        <section>
         <!-- Welcome-->
           <h3>Welcome!</h3>
           <div class = "left-align">
@@ -366,20 +366,31 @@ In [24]: total_by_member_and_date = purchases.groupby(['date', 'member_id'], as_
     </footer>
   </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/reveal.min.js"></script>
-  <script>
-    // Full list of configuration options available here:                                                                                                                             // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      controls: true,                                                                                                                                                                   progress: true,
-      history: true,                                                                                                                                                                    rollingLinks: true,
-      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+      <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-      // Optional libraries used to extend on reveal.js                                                                                                                                 dependencies: [
-        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },                                                                                       { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },                                                          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },                                                                      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-      ]                                                                                                                                                                               });
-  </script>                                                                                                                                                                       </body>
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          ]
+      });
+
+    </script>
+  </body>
 </html>
